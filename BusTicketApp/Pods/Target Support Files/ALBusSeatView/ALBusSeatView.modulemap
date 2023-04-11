@@ -1,0 +1,6 @@
+framework module ALBusSeatView {
+  umbrella header "ALBusSeatView-umbrella.h"
+
+  export *
+  module * { export * }
+}
