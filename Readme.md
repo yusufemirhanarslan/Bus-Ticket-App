@@ -12,7 +12,7 @@
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
 ## Uygulamanın Tanıtım Videosu
- ![tanitim videosu](Images/tanitimvideosu.mp4.zip)   
+ - Uygulamanın tanıtım videosuna resme basarak ulaşabilirsiniz. [:youtube:](https://youtu.be/8nUfTGmWx6g)
    
 ## Onboarding Sayfası
  ![onboarding page 1](Images/onboarding1.png)
