@@ -12,7 +12,12 @@
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
 ## Onboarding Sayfası
- <img src="Images/onboarding1.png" alt="Onboarding page 1" style="height: 500px; width:500px;"/>
- <img src="Images/onboarding2.png" alt="Onboarding page 2" style="height: 500px; width:500px;"/>
- <img src="Images/onboarding3.png" alt="Onboarding page 3" style="height: 500px; width:500px;"/>
- <img src="Images/onboarding4.png" alt="Onboarding page 4" style="height: 500px; width:500px;"/>
+ ![onboarding page 1](Images/onboarding1.png)
+ ![onboarding page 1](Images/onboarding2.png)
+ ![onboarding page 1](Images/onboarding3.png)
+ ![onboarding page 1](Images/onboarding4.png)
+
+## Login ve Signup Sayfası
+
+ ![login page](Images/loginpage)
+ ![signup page](Images/signuppage)
