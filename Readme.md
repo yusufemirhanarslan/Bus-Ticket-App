@@ -12,7 +12,7 @@
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
 ## Uygulamanın Tanıtım Videosu
- ![](Images/BusTicketAppTanıtımVideosu.mp4)   
+ ![](Images/tanitimvideosu.mp4)   
    
 ## Onboarding Sayfası
  ![onboarding page 1](Images/onboarding1.png)
