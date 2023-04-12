@@ -12,7 +12,7 @@
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
 ## Uygulamanın Tanıtım Videosu
- - Uygulamanın tanıtım videosuna resme basarak ulaşabilirsiniz. [🎬](https://youtu.be/8nUfTGmWx6g)
+ - Uygulamanın tanıtım videosuna emojiye basarak ulaşabilirsiniz. [🎬](https://youtu.be/8nUfTGmWx6g)
    
 ## Onboarding Sayfası
  ![onboarding page 1](Images/onboarding1.png)
@@ -24,3 +24,15 @@
 
  ![login page](Images/loginpage.png)
  ![signup page](Images/signuppage.png)
+ 
+ ## Ana sayfa
+ ![home page](Images/homePage.png)
+
+ ## Otobüs Firmalarının Listelendiği Sayfa
+ ![busList page](Images/busList.png)
+
+ ## Ödeme Sayfası
+ ![payment page](Images/paymentPage.png)
+
+ ## ALınan Biletlerin Listelendiği Sayfa
+ ![ticketList page](Images/ticketList.png)
