@@ -55,8 +55,8 @@ class PaymentViewController: UIViewController {
         nameTextField.text = self.name + " " + self.surname
         hourLabel.text = ticketModel.hour
         
-        let name = "Adınız: \(String(describing: self.name))"
-        let surname = "Soyadınız: \(String(describing: self.surname))"
+        let name = "Adiniz: \(String(describing: self.name))"
+        let surname = "Soyadiniz: \(String(describing: self.surname))"
         let fromText = "Nereden: \(ticketModel.fromLocation)"
         let toText = "Nereye: \(ticketModel.toLocation)"
         let seatText = "Koltuk Numaraları: \(ticketModel.seatNumbers)"

@@ -2,7 +2,7 @@
  
  Otobüs bileti alma uygulaması.
  
- ## Uygulamanın Tanıtımı
+ ## **Uygulamanın Tanıtımı**
  - :round_pushpin: Kullanıcı uygulamayı kullanabilmesi için önce kayıt ol **(signup)** butonundan kayıt olmalı. 
  - :round_pushpin: Eğer başarılı kayıt olabilirse giriş **(login)** ekranına geliyor. 
  - :round_pushpin: Kayıt olduğu mail adresi ve şifresi yazdığı bilgilerle doğru eşleşirse kullanıcı ana sayfaya yönlendiriliyor. 
@@ -11,28 +11,31 @@
  - :round_pushpin: Kullanıcı ödeme sayfasında gerekli bilgileri doldurmadan ödeme işlemini gerçekleştiremiyor. Eğer tüm bilgiler doğru girildiyse kullanıcı biletlerin listelendiği sayfaya yönlendiriliyor.
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
-## Uygulamanın Tanıtım Videosu
+## **Uygulamanın Tanıtım Videosu**
  - Uygulamanın tanıtım videosuna emojiye basarak ulaşabilirsiniz. [🎬](https://youtu.be/8nUfTGmWx6g)
    
-## Onboarding Sayfası
+## **Onboarding Sayfası**
  ![onboarding page 1](Images/onboarding1.png)
  ![onboarding page 1](Images/onboarding2.png)
  ![onboarding page 1](Images/onboarding3.png)
  ![onboarding page 1](Images/onboarding4.png)
 
-## Login ve Signup Sayfası
+## **Login ve Signup Sayfası**
 
  ![login page](Images/loginpage.png)
  ![signup page](Images/signuppage.png)
  
- ## Ana sayfa
+ ## **Ana sayfa**
  ![home page](Images/homePage.png)
 
- ## Otobüs Firmalarının Listelendiği Sayfa
+ ## **Otobüs Firmalarının Listelendiği Sayfa**
  ![busList page](Images/busList.png)
 
- ## Ödeme Sayfası
+ ## **Ödeme Sayfası**
  ![payment page](Images/paymentPage.png)
 
- ## ALınan Biletlerin Listelendiği Sayfa
+ ## **ALınan Biletlerin Listelendiği Sayfa**
  ![ticketList page](Images/ticketList.png)
+ 
+ ## **Qr Kod Çıktısı**
+![qrCode page](Images/qrResult.jpeg)
