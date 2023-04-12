@@ -12,7 +12,7 @@
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
 ## Onboarding Sayfası
- ![onboarding page 1] (/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.08.png)
- ![onboarding page 1] (/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.12.png)
- ![onboarding page 1] (/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.19.png)
- ![onboarding page 1] (/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.23.png)
+ ![onboarding page 1](/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.08.png)
+ ![onboarding page 1](/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.12.png)
+ ![onboarding page 1](/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.19.png)
+ ![onboarding page 1](/Users/yusufemirhan/Desktop/Simulator Screenshot - iPhone 14 Pro - 2023-04-12 at 03.33.23.png)
