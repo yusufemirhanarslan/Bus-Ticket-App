@@ -19,5 +19,5 @@
 
 ## Login ve Signup Sayfası
 
- ![login page](Images/loginpage)
- ![signup page](Images/signuppage)
+ ![login page](Images/loginpage.png)
+ ![signup page](Images/signuppage.png)
