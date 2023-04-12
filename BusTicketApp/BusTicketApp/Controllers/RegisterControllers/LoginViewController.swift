@@ -77,18 +77,17 @@ class LoginViewController: UIViewController {
                 passengerModel.id = id
                 passengerModel.password = password
                 
+                UserDefaults.standard.set(name, forKey: "name")
+                UserDefaults.standard.set(surname, forKey: "surname")
+                UserDefaults.standard.set(email, forKey: "email")
+                UserDefaults.standard.set(id.uuidString, forKey: "id")
+                UserDefaults.standard.set(password, forKey: "password")
                 
-//                ShowPopUpClass.showPopUp(description: "Giriş Başarılı", animationName: "success", sender: self )
-//
-//                Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { timer in
-//                    self.isFinished = true
-//                }
-//
                 isControl = true
             }
             
             if results.isEmpty {
-                ShowPopUpClass.showPopUp(description: "Yanlış Şifre veya Mail adresi", animationName: "fail", sender: self)
+                AlertDialog.showAlert(alertTitle: "Uyarı", alertMessage: "Yanlış şifre veya Mail Adresi", defaultTitle: "Ok", cancelTitle: "Title", viewController: self)
             
             }
             

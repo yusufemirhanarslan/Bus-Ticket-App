@@ -25,6 +25,11 @@ class PresentTicketsViewController: UIViewController {
     var seatNumbers: [Int]!
     var ticketModel = TicketModel()
     var qrImageModel = QrModel()
+    var name: String!
+    var surname: String!
+    var email: String!
+    var password: String!
+    var id: String!
     
     var ticketModelArray = [TicketModel]()
     var qrImageModelArray = [QrModel]()
@@ -32,8 +37,16 @@ class PresentTicketsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "🎟️ Biletlerinize Aşağıdan Ulaşabilirsiniz 🎟️"
+        
         let nib = UINib(nibName: "CustomTicketsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
+            
+        name = UserDefaults.standard.string(forKey: "name")
+        surname = UserDefaults.standard.string(forKey: "surname")
+        email = UserDefaults.standard.string(forKey: "email")
+        id =  UserDefaults.standard.string(forKey: "id")
+        password = UserDefaults.standard.string(forKey: "password")
         
         getData()
         
@@ -43,7 +56,7 @@ class PresentTicketsViewController: UIViewController {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: "homeViewController") as! HomeViewController
         homeViewController.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(homeViewController, animated: true)
+        navigationController?.setViewControllers([homeViewController], animated: true)
         
     }
     
@@ -108,7 +121,7 @@ class PresentTicketsViewController: UIViewController {
                                   dateYear: dateYearText,
                                   seatNumbers: seatNumbers,
                                   totalSeatPrice: 100,
-                                  passenger: PassengerModel(name: "Yusuf",surname: "Arslan",email: "qwdıuw@example.com",password: "12345",id: UUID()),
+                                  passenger: PassengerModel(name: name ,surname: surname ,email: email ,password: password,id: UUID(uuidString: id)!),
                                   hour: hourText)
         qrImageModel = QrModel(qrImage: self.qrImage)
         
@@ -130,7 +143,7 @@ extension PresentTicketsViewController: UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTicketsTableViewCell
         
-        cell.setup(ticketModelArray[indexPath.row], qrImageModelArray[indexPath.row])
+        cell.setup(ticketModelArray.reversed()[indexPath.row], qrImageModelArray.reversed()[indexPath.row])
         
         return cell
         

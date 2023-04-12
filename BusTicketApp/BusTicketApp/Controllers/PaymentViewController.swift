@@ -28,22 +28,35 @@ class PaymentViewController: UIViewController {
     var ticketModel = TicketModel()
     var text: String!
     var priceText: String!
+    
+    var name: String!
+    var surname: String!
+    var email: String!
+    var password: String!
+    var id: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Ödeme Adımına Hoşgeldiniz"
         
+        name = UserDefaults.standard.string(forKey: "name")
+        surname = UserDefaults.standard.string(forKey: "surname")
+        email = UserDefaults.standard.string(forKey: "email")
+        id =  UserDefaults.standard.string(forKey: "id")
+        password = UserDefaults.standard.string(forKey: "password")
+        
         fromLabel.text = ticketModel.fromLocation + "(OTOGAR)"
         toLabel.text = ticketModel.toLocation + "(OTOGAR)"
         dateLabel.text = "\(ticketModel.dateDay)" + " / " + "\(ticketModel.dateMonth)" + " / " + "\(ticketModel.dateYear)"
         priceLabel.text = "\(ticketModel.totalSeatPrice * ticketModel.seatNumbers.count) TL"
-        seatLabel.text = String(describing: ticketModel.seatNumbers.sorted())
-        mailTextField.text = ticketModel.passengerModel.email
-        nameTextField.text = String(describing: ticketModel.passengerModel.name) + String(describing: ticketModel.passengerModel.surname)
+        seatLabel.text = String(describing: ticketModel.seatNumbers.sorted().map { String($0) }.joined(separator: ","))
+        mailTextField.text = self.email
+        nameTextField.text = self.name + " " + self.surname
         hourLabel.text = ticketModel.hour
         
-        let name = "Adınız: \(ticketModel.passengerModel.name)"
-        let surname = "Soyadınız: \(ticketModel.passengerModel.surname)"
+        let name = "Adınız: \(String(describing: self.name))"
+        let surname = "Soyadınız: \(String(describing: self.surname))"
         let fromText = "Nereden: \(ticketModel.fromLocation)"
         let toText = "Nereye: \(ticketModel.toLocation)"
         let seatText = "Koltuk Numaraları: \(ticketModel.seatNumbers)"
@@ -74,7 +87,7 @@ class PaymentViewController: UIViewController {
             
             let presentTicketViewController = storyboard?.instantiateViewController(withIdentifier: "presentTicketVC") as! PresentTicketsViewController
             presentTicketViewController.modalPresentationStyle = .fullScreen
-            navigationController?.present(presentTicketViewController, animated: true)
+            navigationController?.setViewControllers([presentTicketViewController], animated: true)
             
         }else {
             AlertDialog.showAlert(alertTitle: "Dikkat", alertMessage: "Lütfen Boş Yer Bırakmayınız", defaultTitle: "Ok", cancelTitle: "İptal", viewController: self)

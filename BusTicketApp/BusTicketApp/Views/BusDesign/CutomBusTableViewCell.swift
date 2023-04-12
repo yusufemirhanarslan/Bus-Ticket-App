@@ -26,6 +26,7 @@ class CutomBusTableViewCell: UITableViewCell {
     @IBOutlet weak var bottomStackView: UIStackView!
     
     @IBOutlet weak var actionLabel: UILabel!
+    var check: Bool!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,7 +58,7 @@ class CutomBusTableViewCell: UITableViewCell {
         let totalPrice = count * ticketPrice
         
         if !seatNumbers.isEmpty {
-            seatLabel.text = "Seçilen Koltuklar = \(seatNumbers)"
+            seatLabel.text = "Seçilen Koltuklar = \(seatNumbers.map { String($0) }.joined(separator: ","))"
             priceLabel.text = "Toplam Fiyat = \(totalPrice) TL"
         }else {
             seatLabel.text = "Seçilen Koltuklar"
@@ -79,7 +80,16 @@ class CutomBusTableViewCell: UITableViewCell {
     
     @IBAction func nextButton(_ sender: UIButton) {
         
-        NotificationCenter.default.post(name: .nextButton, object: nil)
+        
+        if dataManager.selectedSeatlist.isEmpty {
+           NotificationCenter.default.post(name: .emptySeat, object: nil)
+            check = true
+            
+        } else {
+            check = false
+        }
+         UserDefaults.standard.set(check, forKey: "check")
+         NotificationCenter.default.post(name: .nextButton, object: nil)
         
     }
     

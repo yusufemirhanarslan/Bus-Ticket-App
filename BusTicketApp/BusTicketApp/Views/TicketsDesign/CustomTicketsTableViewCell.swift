@@ -23,17 +23,6 @@ class CustomTicketsTableViewCell: UITableViewCell {
     @IBOutlet weak var passengerName: UILabel!
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func setup(_ ticketModel: TicketModel, _ qrModel: QrModel){
         
         fromLabelText.text = ticketModel.fromLocation
@@ -41,8 +30,8 @@ class CustomTicketsTableViewCell: UITableViewCell {
         hourLabelText.text = ticketModel.hour
         dateLabelText.text = "\(ticketModel.dateDay)/\(ticketModel.dateMonth)/\(ticketModel.dateYear)"
         qrImageView.image = qrModel.qrImage
-        seatsLabelText.text = "\(ticketModel.seatNumbers)"
+        seatsLabelText.text = "\(ticketModel.seatNumbers.sorted().map{ String($0) }.joined(separator: ","))"
         passengerName.text = ticketModel.passengerModel.name + " " + ticketModel.passengerModel.surname
-        priceLabelText.text = "\(ticketModel.totalSeatPrice)"
+        priceLabelText.text = "\(ticketModel.totalSeatPrice) TL"
     }
 }

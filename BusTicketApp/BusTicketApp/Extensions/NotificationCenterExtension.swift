@@ -13,4 +13,5 @@ extension NSNotification.Name {
     static let seatNumbers = Notification.Name(rawValue: "seatNumbers")
     static let nextButton = Notification.Name(rawValue: "nextButton")
     static let seatNumbersInController = Notification.Name(rawValue: "seatNumbersInController")
+    static let emptySeat = Notification.Name(rawValue: "emptySeat")
 }

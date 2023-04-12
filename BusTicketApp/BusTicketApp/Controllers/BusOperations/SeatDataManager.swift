@@ -28,7 +28,7 @@ extension SeatDataManager: ALBusSeatViewDelegate {
             
             NotificationCenter.default.post(name: .maxSelected, object: nil)
             
-        } else {
+        }else {
             
             var stub = seatList[indexPath.section][indexPath.item]
             stub.gender = selectionType == .man ? true : false

@@ -11,6 +11,9 @@
  - :round_pushpin: Kullanıcı ödeme sayfasında gerekli bilgileri doldurmadan ödeme işlemini gerçekleştiremiyor. Eğer tüm bilgiler doğru girildiyse kullanıcı biletlerin listelendiği sayfaya yönlendiriliyor.
  - :round_pushpin: Biletlerin listelendiği sayfada kullanıcı aldığı tüm biletleri görüntüleyebiliyor. Qr kodu okutarak da seyahat bilgilerini görüntüleyebiliyor.
    
+## Uygulamanın Tanıtım Videosu
+ ![](Images/BusTicketAppTanıtımVideosu.mp4)   
+   
 ## Onboarding Sayfası
  ![onboarding page 1](Images/onboarding1.png)
  ![onboarding page 1](Images/onboarding2.png)

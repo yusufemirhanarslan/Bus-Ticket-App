@@ -90,7 +90,7 @@ class BusViewController: UIViewController {
     
     @objc func customShowPopUp() {
         
-        ShowPopUpClass.showPopUp(description: "5 Taneden Fazla Koltuk Seçemezsiniz", animationName: "attention", sender: self)
+        AlertDialog.showAlert(alertTitle: "Uyarı", alertMessage: "5 taneden fazla koltuk seçemezsiniz", defaultTitle: "Ok", cancelTitle: "Title", viewController: self)
         
     }
     
@@ -116,16 +116,26 @@ class BusViewController: UIViewController {
         ticketModel.passengerModel = PassengerModel(name: passengerModel.name, surname: passengerModel.surname, email: passengerModel.email)
         
     }
+    @objc func emptySeat() {
+        AlertDialog.showAlert(alertTitle: "Uyarı", alertMessage: "Koltuk Seçmediniz", defaultTitle: "Ok", cancelTitle: "İptal", viewController: self)
+    }
     
     @objc func nextButton() {
         
         ticketInformation()
+        let check = UserDefaults.standard.bool(forKey: "check")
+                
+                if check {
+                    NotificationCenter.default.addObserver(self, selector: #selector(emptySeat), name: .emptySeat, object: nil)
+                } else {
+                    let paymentViewController = storyboard?.instantiateViewController(withIdentifier: "paymentViewController") as! PaymentViewController
+                    paymentViewController.modalPresentationStyle = .fullScreen
+                    paymentViewController.ticketModel = ticketModel
+                    navigationController?.pushViewController(paymentViewController, animated: true)
+                }
         
-        let paymentViewController = storyboard?.instantiateViewController(withIdentifier: "paymentViewController") as! PaymentViewController
-        paymentViewController.modalPresentationStyle = .fullScreen
-        paymentViewController.ticketModel = ticketModel
-        //present(paymentViewController, animated: true)
-        navigationController?.pushViewController(paymentViewController, animated: true)
+        
+        
     }
     
 }

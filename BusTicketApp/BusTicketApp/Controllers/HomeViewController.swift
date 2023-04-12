@@ -14,11 +14,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var fromTextLabel: UITextField!
     @IBOutlet weak var toTextLabel: UITextField!
     
+    @IBOutlet weak var lottieAnimationView: LottieAnimationView!
     @IBOutlet weak var dateTextLabel: UITextField!
     
     var datePicker =  UIDatePicker()
-    var camePicker =  UIPickerView()
-    var goPicker =  UIPickerView()
+    var toPicker =  UIPickerView()
+    var fromPicker =  UIPickerView()
     
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var locationView: UIView!
@@ -26,8 +27,8 @@ class HomeViewController: UIViewController {
     var passengerModel = PassengerModel()
     var moveModel = MoveModel()
     
-    var location1 = "Adana"
-    var location2 = "Adana"
+    var fromLocation = "Adana"
+    var toLocation = "Adana"
     
     let cities = ["Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"]
     
@@ -35,10 +36,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        setup()
         datePicker.minimumDate = Date()
         
-        title = "Hoşgeldiniz, " +  passengerModel.name + " " + passengerModel.surname
+        guard let name = UserDefaults.standard.string(forKey: "name") else {return}
+        guard let surname = UserDefaults.standard.string(forKey: "surname") else {return}
+        
+        title = "Hoşgeldiniz, " +  name + " " + surname
         
         dateView.layer.cornerRadius = 10
         dateView.layer.borderWidth = 2
@@ -47,32 +51,35 @@ class HomeViewController: UIViewController {
         locationView.layer.cornerRadius = 10
         locationView.layer.borderWidth = 2
         
-        fromTextLabel.inputView = goPicker
+        fromTextLabel.inputView = fromPicker
         fromTextLabel.layer.cornerRadius = 5
         fromTextLabel.layer.borderColor = .none
         fromTextLabel.placeholder = "Lütfen Bir Yer Seçiniz"
         
-        toTextLabel.inputView = camePicker
+        toTextLabel.inputView = toPicker
         toTextLabel.layer.cornerRadius = 5
         toTextLabel.layer.borderColor = .none
         toTextLabel.placeholder = "Lütfen Bir Yer Seçiniz"
         
         dateTextLabel.placeholder = "Lütfen Tarih Seçiniz"
-        setup()
+        
+        lottieAnimationView.loopMode = .loop
+        lottieAnimationView.play()
+        
         createDatePicker()
         
     }
     
     func setup() {
         
-        goPicker.delegate = self
-        goPicker.dataSource = self
+        fromPicker.delegate = self
+        fromPicker.dataSource = self
         
-        camePicker.delegate = self
-        camePicker.dataSource = self
+        toPicker.delegate = self
+        toPicker.dataSource = self
         
-        goPicker.tag = 1
-        camePicker.tag = 2
+        fromPicker.tag = 1
+        toPicker.tag = 2
     }
     
     func createToolBar() -> UIToolbar {
@@ -111,8 +118,8 @@ class HomeViewController: UIViewController {
         
         let date = datePicker.calendar.dateComponents([.day , .month, .year], from: datePicker.date)
         
-        moveModel.fromLocation = location1
-        moveModel.toLocation = location2
+        moveModel.fromLocation = fromLocation
+        moveModel.toLocation = toLocation
         moveModel.dateDay = date.day!
         moveModel.dateMonth = date.month!
         moveModel.dateYear = date.year!
@@ -125,14 +132,13 @@ class HomeViewController: UIViewController {
         presentTicketViewController.modalPresentationStyle = .overFullScreen
         presentTicketViewController.navigationItem.largeTitleDisplayMode = .never
         navigationController?.setViewControllers([presentTicketViewController], animated: true)
-        //present(presentTicketViewController, animated: true)
         
     }
     
     @IBAction func findBusTicketbutton(_ sender: Any) {
         
         
-        if location1 == location2 {
+        if fromLocation == toLocation {
             
             AlertDialog.showAlert(alertTitle: "Uyarı",
                                   alertMessage: "Aynı ile gidemezsiniz",
@@ -197,11 +203,11 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView.tag {
             
         case 1:
-            location1 = cities[row]
+            fromLocation = cities[row]
             fromTextLabel.text = cities[row]
             fromTextLabel.resignFirstResponder()
         case 2:
-            location2 = cities[row]
+            toLocation = cities[row]
             toTextLabel.text = cities[row]
             toTextLabel.resignFirstResponder()
             

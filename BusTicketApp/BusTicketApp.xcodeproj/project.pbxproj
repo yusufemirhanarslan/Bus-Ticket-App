@@ -39,6 +39,7 @@
 		B49AC6CE29DF961400AF10B5 /* ShowPopUpClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AC6CD29DF961400AF10B5 /* ShowPopUpClass.swift */; };
 		B49AC6D029DF974400AF10B5 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = B49AC6CF29DF974400AF10B5 /* success.json */; };
 		B49AC6D229DF981F00AF10B5 /* fail.json in Resources */ = {isa = PBXBuildFile; fileRef = B49AC6D129DF981F00AF10B5 /* fail.json */; };
+		B4B1F44B29E6E0B6004D0D41 /* welcome2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4B1F44A29E6E0B6004D0D41 /* welcome2.json */; };
 		B4BA55A129DF237D00FE8D9F /* BusInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA55A029DF237D00FE8D9F /* BusInformationModel.swift */; };
 		B4C9D19729E2F80000E8EBCB /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9D19629E2F80000E8EBCB /* TicketModel.swift */; };
 		B4CE9A7B29E429E10000152F /* PresentTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE9A7A29E429E10000152F /* PresentTicketsViewController.swift */; };
@@ -97,6 +98,7 @@
 		B49AC6CD29DF961400AF10B5 /* ShowPopUpClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopUpClass.swift; sourceTree = "<group>"; };
 		B49AC6CF29DF974400AF10B5 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		B49AC6D129DF981F00AF10B5 /* fail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fail.json; sourceTree = "<group>"; };
+		B4B1F44A29E6E0B6004D0D41 /* welcome2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = welcome2.json; path = ../../../../../Downloads/welcome2.json; sourceTree = "<group>"; };
 		B4BA55A029DF237D00FE8D9F /* BusInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInformationModel.swift; sourceTree = "<group>"; };
 		B4C9D19629E2F80000E8EBCB /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 		B4CE9A7A29E429E10000152F /* PresentTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTicketsViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				B455DA2429D8C08B00E20EB0 /* payment.json */,
+				B4B1F44A29E6E0B6004D0D41 /* welcome2.json */,
 				B455DA2029D8C08700E20EB0 /* calendar.json */,
 				B455DA1F29D8C08700E20EB0 /* location.json */,
 				B455DA1E29D8C08700E20EB0 /* welcome.json */,
@@ -390,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B1F44B29E6E0B6004D0D41 /* welcome2.json in Resources */,
 				B455DA1029D8BD7800E20EB0 /* LaunchScreen.storyboard in Resources */,
 				B455DA0D29D8BD7800E20EB0 /* Assets.xcassets in Resources */,
 				B455DA2529D8C08B00E20EB0 /* payment.json in Resources */,
